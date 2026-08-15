@@ -16,7 +16,8 @@ public:
       }
       for(int i=0;i<nums.size();i++)
       {
-      ans[i] =prefix[i]*suffix[i];
+      int product = prefix[i]*suffix[i];
+       ans[i]=product;
       }
       return ans;
     }
