@@ -10,7 +10,7 @@
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
-        int length = 0;
+       /* int length = 0;
         ListNode temp = head;
         while(temp!=null)
         {
@@ -24,6 +24,21 @@ class Solution {
             middle--;
         }
         return temp;
+        */
+        
+
+        // implementation using Hare and Tortoise Algorithm (Fast & slow)
+        ListNode slow,fast;
+        slow = head;
+        fast = head;
+        while(fast!=null && fast.next!=null)
+        {
+            //Move the slow pointer 1 step at a time
+            slow = slow.next;
+            //Move the fast pointer 2 steps at a time
+            fast = fast.next.next;
+        }
+        return slow;
         
     }
 }
